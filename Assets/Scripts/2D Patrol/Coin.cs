@@ -5,20 +5,15 @@ using UnityEngine.Events;
 
 public class Coin : MonoBehaviour
 {
+    public UnityAction OnTaken;
     [SerializeField] private int _amount = 1;
-    private CoinSpawner _coinSpawner;
-
-    public void Init(CoinSpawner coinSpawner)
-    {
-        _coinSpawner = coinSpawner;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            _coinSpawner.OnCoinTaked();
-            Destroy(gameObject);
+            OnTaken?.Invoke();
+            gameObject.SetActive(false);
         }
     }
 

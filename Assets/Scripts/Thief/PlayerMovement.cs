@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private int _speed = 6;
     private Vector2 _direction;
     private Rigidbody2D _rigidbody2D;
-    private int _speed = 6;
+    
 
     private void Start()
     {

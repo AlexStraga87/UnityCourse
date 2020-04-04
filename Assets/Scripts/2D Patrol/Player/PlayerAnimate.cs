@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PhysicsMovement))]
+[RequireComponent(typeof(PlayerMover))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class PlayerAnimate : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
-    private PhysicsMovement _physicsMovement;
+    private PlayerMover _playerMover;
 
-    private void OnEnable()
+    private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
-        _physicsMovement = GetComponent<PhysicsMovement>();
+        _playerMover = GetComponent<PlayerMover>();
     }
 
     private void FixedUpdate()
     {
-        Animate(_physicsMovement.XDirection);
+        Animate(_playerMover.DirectionX);
     }
 
     private void Animate(float XDirection)
     {
-        float xAxis = _physicsMovement.XDirection;
+        float xAxis = _playerMover.DirectionX;
 
         _animator.SetFloat("Speed", Mathf.Abs(XDirection));
 

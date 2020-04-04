@@ -11,7 +11,7 @@ public class EnemyAnimate : MonoBehaviour
     private Animator _animator;
     private EnemyPatrolMovement _enemyMovement;
 
-    private void OnEnable()
+    private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();

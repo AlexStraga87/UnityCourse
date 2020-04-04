@@ -9,8 +9,8 @@ public class AlarmDoor : MonoBehaviour
     [SerializeField] private Sprite _openedDoorSprite;
     [SerializeField] private Sprite _closedDoorSprite;
     private SpriteRenderer _spriteRenderer;
-    public UnityAction OnAlarm;
-    public UnityAction OnStopAlarm;
+    public UnityAction Alarm;
+    public UnityAction StopAlarm;
 
     private bool _isAlarm;
     private bool _isThiefInZone;
@@ -38,7 +38,7 @@ public class AlarmDoor : MonoBehaviour
         _isThiefInZone = false;
         if (_isAlarm)
         {
-            OnStopAlarm?.Invoke();
+            StopAlarm?.Invoke();
         }
         _isAlarm = false;
     }
@@ -48,7 +48,7 @@ public class AlarmDoor : MonoBehaviour
         _spriteRenderer.sprite = _openedDoorSprite;
         if (_isAlarm == false)
         {
-            OnAlarm?.Invoke();
+            Alarm?.Invoke();
             _isAlarm = true;
         }
     }

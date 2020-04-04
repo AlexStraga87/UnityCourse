@@ -13,14 +13,14 @@ public class EnemyPatrolMovement : MonoBehaviour
 
     private int _direction = 1;
     private bool _isWaiting;
-    private Rigidbody2D _rb2d;
-    private float xMinPatrol;
+    private Rigidbody2D _rigidBody2d;
+    private float _xMinPatrol;
     private float _xMaxPatrol;
 
     private void Start()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
-        xMinPatrol = transform.position.x - _patrolDistance;
+        _rigidBody2d = GetComponent<Rigidbody2D>();
+        _xMinPatrol = transform.position.x - _patrolDistance;
         _xMaxPatrol = transform.position.x + _patrolDistance;
     }
 
@@ -39,7 +39,7 @@ public class EnemyPatrolMovement : MonoBehaviour
         }
         else
         {
-            MoveToEdge(transform.position.x > xMinPatrol);
+            MoveToEdge(transform.position.x > _xMinPatrol);
         }
     }
 
@@ -47,7 +47,7 @@ public class EnemyPatrolMovement : MonoBehaviour
     {
         if (condition)
         { 
-           _rb2d.position = _rb2d.position + Vector2.right * _direction * _speed * Time.fixedDeltaTime;
+           _rigidBody2d.position = _rigidBody2d.position + Vector2.right * _direction * _speed * Time.fixedDeltaTime;
         }
         else
         {

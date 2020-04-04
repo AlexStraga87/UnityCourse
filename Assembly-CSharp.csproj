@@ -65,9 +65,9 @@
     <Compile Include="Assets\Scripts\2D Patrol\Coin.cs" />
     <Compile Include="Assets\Scripts\2D Patrol\Enemy\EnemyAnimate.cs" />
     <Compile Include="Assets\Scripts\2D Patrol\Enemy\EnemyPatrolMovement.cs" />
-    <Compile Include="Assets\Scripts\2D Patrol\Player\PhysicsMovement.cs" />
     <Compile Include="Assets\Scripts\2D Patrol\Player\Player.cs" />
     <Compile Include="Assets\Scripts\2D Patrol\Player\PlayerAnimate.cs" />
+    <Compile Include="Assets\Scripts\2D Patrol\Player\PlayerMover.cs" />
     <Compile Include="Assets\Scripts\2D Patrol\Spawners\CoinSpawner.cs" />
     <Compile Include="Assets\Scripts\EnemySpawners\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\EnemySpawners\EnemyTargetMovement.cs" />
