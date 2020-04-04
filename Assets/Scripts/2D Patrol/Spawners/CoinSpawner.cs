@@ -54,5 +54,12 @@ public class CoinSpawner : MonoBehaviour
         yield return new WaitForSeconds(2);
         SpawnCoin();
     }
-
+    
+    private void OnDestroy()
+    {
+        foreach (var coin in _coinPool)
+        {
+            coin.OnTaken -= OnCoinTaked;
+        }
+    }
 }
